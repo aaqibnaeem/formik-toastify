@@ -1,0 +1,14 @@
+[debug] [2023-04-29T18:38:38.110Z] ----------------------------------------------------------------------
+[debug] [2023-04-29T18:38:38.115Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-04-29T18:38:38.117Z] CLI Version:   11.17.0
+[debug] [2023-04-29T18:38:38.117Z] Platform:      win32
+[debug] [2023-04-29T18:38:38.117Z] Node Version:  v16.17.0
+[debug] [2023-04-29T18:38:38.133Z] Time:          Sat Apr 29 2023 23:38:38 GMT+0500 (Pakistan Standard Time)
+[debug] [2023-04-29T18:38:38.134Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-29T18:38:38.306Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-29T18:38:38.307Z] > authorizing via signed-in user (aqibnaeemakhtar@gmail.com)
+[debug] [2023-04-29T18:38:38.308Z] [iam] checking project formik-toastify for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-29T18:38:38.313Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/formik-toastify:testIamPermissions [none]
+[debug] [2023-04-29T18:38:38.314Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/formik-toastify:testIamPermissions x-goog-quota-user=projects/formik-toastify
+[debug] [2023-04-29T18:38:38.314Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/formik-toastify:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
