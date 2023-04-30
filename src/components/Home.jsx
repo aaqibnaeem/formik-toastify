@@ -41,6 +41,7 @@ let Home = () => {
           </button>
         </div>
       </nav>
+      <div className="container-fluid text-center pt-3"><h1>Welcome</h1></div>
       <ToastContainer />
     </>
   );

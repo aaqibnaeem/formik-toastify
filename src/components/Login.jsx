@@ -25,7 +25,7 @@ let Login = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.log(values);
-      const notify = toast.success("Wow so easy...", {
+      const notify = toast.success("Logged in, Please wait...", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -69,6 +69,7 @@ let Login = () => {
             <span
               style={{
                 color: "red",
+                fontSize:"12px"
               }}
             >
               {myFormik.touched.email && myFormik.errors.email}
@@ -90,6 +91,7 @@ let Login = () => {
             <span
               style={{
                 color: "red",
+                fontSize:"12px"
               }}
             >
               {myFormik.touched.password && myFormik.errors.password}
