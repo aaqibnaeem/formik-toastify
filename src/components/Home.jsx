@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import StepperForm from "./stepperForm";
 let Home = () => {
   let navigate = useNavigate();
   const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -21,7 +22,7 @@ let Home = () => {
         theme: "colored",
       });
     }
-  }, []);
+  });
 
   let Logout = () => {
     localStorage.removeItem("email");
@@ -31,17 +32,18 @@ let Home = () => {
 
   return (
     <>
-      <nav className="navbar bg-body-tertiary">
+      <nav className="navbar bg-body-tertiary shadow-sm">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Home Page
-          </a>
-          <button className="btn btn-secondary" onClick={() => Logout()}>
+          Home Page
+          <button className="btn btn-light" onClick={() => Logout()}>
             Logout
           </button>
         </div>
       </nav>
-      <div className="container-fluid text-center pt-3"><h1>Welcome</h1></div>
+      <div className="container-fluid text-center pt-3">
+        <h1>Welcome</h1>
+      </div>
+      <StepperForm />
       <ToastContainer />
     </>
   );

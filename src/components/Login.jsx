@@ -25,7 +25,7 @@ let Login = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.log(values);
-      const notify = toast.success("Logged in, Please wait...", {
+      toast.success("Logged in, Please wait...", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
