@@ -25,11 +25,11 @@ function StepperForm() {
 
   //function chnage value of active step
   const nextform = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setActiveStep((activeStep) => activeStep + 1);
   };
 
   const prevform = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setActiveStep((activeStep) => activeStep - 1);
   };
 
   return (

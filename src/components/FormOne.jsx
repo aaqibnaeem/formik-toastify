@@ -1,6 +1,8 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { connect } from "react-redux";
+import { handleChange } from "../config/store/action";
 
 function FormOne(props) {
   let [fullName, setFullName] = useState("");
@@ -12,27 +14,27 @@ function FormOne(props) {
   }, []);
 
   let submit = () => {
-    if (fullName && rollNum) {
-      localStorage.setItem("fullName", fullName);
-      localStorage.setItem("rollNum", rollNum);
-      props.nextform();
-    } else {
-      toast.error("All fields required.", {
-        position: "top-right",
-        autoClose: 500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    }
+    // if (fullName && rollNum) {
+    // localStorage.setItem("fullName", fullName);
+    // localStorage.setItem("rollNum", rollNum);
+    props.nextform();
+    // }
+    // else {
+    //   toast.error("All fields required.", {
+    //     position: "top-right",
+    //     autoClose: 500,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "colored",
+    //   });
+    // }
   };
   return (
     <>
       <div className="container mt-5 text-center bg-light p-5">
-        <h3>Form A</h3>
         <form className="d-flex flex-column align-items-center justify-content-center">
           <TextField
             id="outlined-basic"
@@ -41,8 +43,9 @@ function FormOne(props) {
             type="email"
             size="small"
             name="fullName"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            value={props.values.fullName}
+            // onChange={(e) => setFullName(e.target.value)}
+            onChange={(e) => props.handleChange(e)}
           />
           <br />
           <TextField
@@ -51,8 +54,10 @@ function FormOne(props) {
             variant="outlined"
             type="text"
             size="small"
-            value={rollNum}
-            onChange={(e) => setRollNum(e.target.value)}
+            name="rollNumber"
+            value={props.values.rollNumber}
+            // onChange={(e) => setRollNum(e.target.value)}
+            onChange={(e) => props.handleChange(e)}
           />
           <br />
           <Button variant="outlined" onClick={() => submit()}>
@@ -64,4 +69,13 @@ function FormOne(props) {
   );
 }
 
-export default FormOne;
+const mapStateToProps = (state) => ({
+  values: state,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  handleChange: (data) => dispatch(handleChange(data)),
+});
+
+// export default FormOne;
+export default connect(mapStateToProps, mapDispatchToProps)(FormOne);
